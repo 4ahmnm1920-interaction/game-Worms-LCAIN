@@ -117,58 +117,10 @@ MonoBehaviour:
   m_Name: Mezz
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 3673489028101474962}
   - {fileID: -1085034398456367711}
   - {fileID: 7991672141947709956}
   - {fileID: -1492074123985938044}
   - {fileID: -2630726021333064088}
---- !u!114 &3673489028101474962
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 0.54
-  threshold:
-    overrideState: 1
-    value: 0.7
-  softKnee:
-    overrideState: 1
-    value: 0.5
-  clamp:
-    overrideState: 1
-    value: 65468.26
-  diffusion:
-    overrideState: 1
-    value: 2.7
-  anamorphicRatio:
-    overrideState: 1
-    value: 0
-  color:
-    overrideState: 1
-    value: {r: 0.9339623, g: 0.6704816, b: 0.066082224, a: 1}
-  fastMode:
-    overrideState: 1
-    value: 0
-  dirtTexture:
-    overrideState: 0
-    value: {fileID: 0}
-    defaultState: 1
-  dirtIntensity:
-    overrideState: 0
-    value: 0
 --- !u!114 &7991672141947709956
 MonoBehaviour:
   m_ObjectHideFlags: 3

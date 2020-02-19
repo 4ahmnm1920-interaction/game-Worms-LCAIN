@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class WormsController : MonoBehaviour
 {
+    //RBs
     public Rigidbody rbAmmo;
     public Rigidbody2D rb;
 
+    //See if grounded
     public Transform GroundCheck;
     public LayerMask groundLayers;
 
+    //Animation
     public Animator animator;
 
+    //Jumping
     public float jumpForce;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
+    //Movement
     public float moveSpeed;
     public float AmmoForce;
     public float MovementSmoothing;
@@ -24,22 +29,29 @@ public class WormsController : MonoBehaviour
     public bool isGrounded;
     private bool isJumping = false;
 
+    //Controls
     public KeyCode Jump;
     public KeyCode Left;
     public KeyCode Right;
     public KeyCode Gun;
 
+    //Initialize, assign RB and animator
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
     }
+
+    //Check for input, control animation
     void Update()
     {
         animator.SetBool("isWalking", true);
+
+        //see if character is falling
         float JumpVelocity = rb.velocity.y;
         animator.SetFloat("JumpVel", JumpVelocity);
 
+        //send Jump event
         if (isJumping == true)
         {
             animator.SetBool("isJumping", true);
@@ -57,14 +69,14 @@ public class WormsController : MonoBehaviour
 
         if (Input.GetKey(Right))
         {
-            //isFacingRight = true;
             Move(10, false);
+            NewShoot(true);
         }
 
         if (Input.GetKey(Left))
         {
-            //isFacingRight = false;
             Move(-10, false);
+            NewShoot(false);
         }
 
         if (Input.GetKeyDown(Gun))
@@ -75,6 +87,7 @@ public class WormsController : MonoBehaviour
 
     void Shüt()
     {
+        //spawn bullet
         Rigidbody clone;
         int Direction;
         if (isFacingRight == true)
@@ -120,6 +133,7 @@ public class WormsController : MonoBehaviour
 
     }
 
+    //Tell animator player has landed
     public void HasLanded()
     {
         isJumping = false;
@@ -129,8 +143,6 @@ public class WormsController : MonoBehaviour
     {
         Vector2 refVel = Vector2.zero;
 
-        //if (isGrounded)
-        //{
             animator.SetBool("isWalking", false);
             Vector2 targetVelocity = new Vector2(move * moveSpeed, rb.velocity.y);
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref refVel, MovementSmoothing);
@@ -140,7 +152,6 @@ public class WormsController : MonoBehaviour
                 // flip player
                 Flip();
             }
-        //}
 
         if (isGrounded && jump)
         {
@@ -148,6 +159,18 @@ public class WormsController : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce * 25));
         }
 
+    }
+
+    void NewShoot(bool isRight)
+    {
+        if (isRight == true)
+        {
+            Debug.Log("player is facing right!");
+        }
+        else
+        {
+            Debug.Log("Player is facing left!");
+        }
     }
 
     void Flip()
