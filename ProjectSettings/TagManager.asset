@@ -8,6 +8,7 @@ TagManager:
   - PickupHealth
   - PickupBullet
   - Killzone
+  - doNotDestroy
   layers:
   - Default
   - TransparentFX
