@@ -1,0 +1,6 @@
+	
+	1.  Directional Double jump or Dash
+	2.  Melee attack
+	3.  Health Bar
+	4.  Jump Pad
+	5. Win Screen

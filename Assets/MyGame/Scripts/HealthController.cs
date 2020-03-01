@@ -14,9 +14,14 @@ public class HealthController : MonoBehaviour
         CurrentHealth = MaxHealth;
     }
 
-    void Damage()
+    public void Damage()
     {
         CurrentHealth = CurrentHealth - 1;
+    }
+
+    public void Heal()
+    {
+        CurrentHealth = CurrentHealth + 1;
     }
 
     private void Update()
@@ -26,5 +31,9 @@ public class HealthController : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        if (CurrentHealth > MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
+        }
     }
 }

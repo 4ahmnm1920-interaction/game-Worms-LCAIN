@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6257701097372000818}
   - component: {fileID: 6257701097372000819}
   - component: {fileID: 6257701097372000821}
+  - component: {fileID: 4258270105482861121}
   - component: {fileID: 6257701097372000815}
   m_Layer: 0
   m_Name: Mezz
@@ -163,6 +164,22 @@ MonoBehaviour:
   Left: 276
   Right: 275
   Gun: 274
+  HealthController: {fileID: 4258270105482861121}
+--- !u!114 &4258270105482861121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6257701097372000822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9108d94fdcdb7ba42b28243f7de2e56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartObj: []
+  CurrentHealth: 0
+  MaxHealth: 5
 --- !u!95 &6257701097372000815
 Animator:
   serializedVersion: 3

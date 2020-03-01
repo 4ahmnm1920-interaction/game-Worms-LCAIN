@@ -23,6 +23,7 @@ public class WormsController : MonoBehaviour
     //Movement
     public float moveSpeed;
     public float AmmoForce;
+    public float AmmoForceControl;
     public float MovementSmoothing;
     Vector2 movement;
     private bool isFacingRight;
@@ -35,11 +36,15 @@ public class WormsController : MonoBehaviour
     public KeyCode Right;
     public KeyCode Gun;
 
+    //Health control
+    public HealthController HealthController;
+
     //Initialize, assign RB and animator
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
+        AmmoForceControl = AmmoForce;
     }
 
     //Check for input, control animation
@@ -70,13 +75,11 @@ public class WormsController : MonoBehaviour
         if (Input.GetKey(Right))
         {
             Move(10, false);
-            NewShoot(true);
         }
 
         if (Input.GetKey(Left))
         {
             Move(-10, false);
-            NewShoot(false);
         }
 
         if (Input.GetKeyDown(Gun))
@@ -100,7 +103,7 @@ public class WormsController : MonoBehaviour
         }
 
 
-        Vector3 fix = new Vector3(0.5f, 0.5f, 0f);
+        Vector3 fix = new Vector3(1.5f * Direction, 0.5f, 0f);
         clone = Instantiate(rbAmmo, transform.position + fix, transform.rotation);
         clone.velocity = transform.TransformDirection(AmmoForce * Direction, 0f, 0f);
 
@@ -161,15 +164,12 @@ public class WormsController : MonoBehaviour
 
     }
 
-    void NewShoot(bool isRight)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isRight == true)
+        if (collision.tag == "bullet")
         {
-            Debug.Log("player is facing right!");
-        }
-        else
-        {
-            Debug.Log("Player is facing left!");
+            Destroy(collision.gameObject);
+            HealthController.Damage();
         }
     }
 
