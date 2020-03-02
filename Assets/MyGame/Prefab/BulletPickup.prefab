@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6666974107413231307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6458133936c14a4478c069ab07f1d12e, type: 3}
-  m_Color: {r: 0.9725491, g: 0.29803923, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 6666974107413231307}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 213e67a142c51e74c9145290b97e79e2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 46260a91cc8a9d64baf051ebe69cb958, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b51000edc9f39449a875c9a35acdf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmoMultiplier: 2.5
+  AmmoMultiplier: 2
   Wctrl: {fileID: 0}
   Countdown: 3
 --- !u!58 &6666974107413231304

@@ -84,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &6257701097372000818
@@ -148,6 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rbAmmo: {fileID: 1741279073590629635, guid: 82be05e339313564f9dae03ee17841e3, type: 3}
   rb: {fileID: 6257701097372000818}
+  jumpCloudFX: {fileID: 3137466055053996695, guid: 13b99b029a747ed42888ffb74a968bc0,
+    type: 3}
+  hitFX: {fileID: 5029978200632798734, guid: 6754882f1dd44d54fba256d314b293ad, type: 3}
   GroundCheck: {fileID: 6257701097947469240}
   groundLayers:
     serializedVersion: 2
@@ -156,10 +159,12 @@ MonoBehaviour:
   jumpForce: 70
   fallMultiplier: 3.5
   lowJumpMultiplier: 2
-  moveSpeed: 2
-  AmmoForce: 30
+  moveSpeed: 3
+  AmmoForce: 25
+  AmmoForceControl: 0
   MovementSmoothing: 0.15
   isGrounded: 0
+  KnockbackStr: 900
   Jump: 273
   Left: 276
   Right: 275
