@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickupBullet : MonoBehaviour
 {
+    public GameObject Electricity;
+
     public float AmmoMultiplier;
     public WormsController Wctrl;
     private bool CountdownBool = false;
@@ -14,11 +16,13 @@ public class PickupBullet : MonoBehaviour
     {
         if (CountdownBool)
         {
+            Electricity.SetActive(true);
             Countdown -= Time.deltaTime;
             if (Countdown <= 0)
             {
                 CountdownBool = false;
                 Wctrl.AmmoForce = Wctrl.AmmoForceControl;
+                Electricity.SetActive(false);
                 Destroy(this.gameObject);
             }
         }
@@ -28,6 +32,7 @@ public class PickupBullet : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Electricity = collision.gameObject.transform.GetChild(0).gameObject;
             Wctrl = collision.gameObject.GetComponent<WormsController>();
             CountdownBool = true;
             if (CountdownBool)
