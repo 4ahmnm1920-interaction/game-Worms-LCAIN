@@ -51,6 +51,7 @@ public class WormsController : MonoBehaviour
     [Header("Health Controller")]
     public HealthController HealthController;
 
+
     //Initialize, assign RB and animator
     private void Start()
     {
@@ -218,5 +219,4 @@ public class WormsController : MonoBehaviour
         thisScale.x *= -1;
         transform.localScale = thisScale;
     }
-
 }

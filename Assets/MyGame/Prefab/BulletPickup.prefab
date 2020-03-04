@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6458133936c14a4478c069ab07f1d12e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e29845808cbd79f4d9829e353083f62b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b51000edc9f39449a875c9a35acdf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Electricity: {fileID: 0}
   AmmoMultiplier: 2
   Wctrl: {fileID: 0}
   Countdown: 3
@@ -132,4 +133,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.8011057
+  m_Radius: 0.8808271

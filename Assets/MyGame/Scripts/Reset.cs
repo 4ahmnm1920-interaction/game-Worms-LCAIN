@@ -10,7 +10,7 @@ public class Reset : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("SkyLevel");
         }
     }
 }

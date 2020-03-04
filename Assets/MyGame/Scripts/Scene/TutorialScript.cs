@@ -6,8 +6,8 @@ public class TutorialScript : MonoBehaviour
 {
     static TutorialScript instance = null;
 
-    bool IsShown = true;
-    public SpriteRenderer boopty;
+    bool IsShown;
+    public SpriteRenderer SRender;
 
     void Awake()
     {
@@ -27,12 +27,12 @@ public class TutorialScript : MonoBehaviour
     {
         if (IsShown)
         {
-            boopty.enabled = true;
+            SRender.enabled = true;
         }
 
         else
         {
-            boopty.enabled = false;
+            SRender.enabled = false;
         }
 
         if (Input.GetKeyUp(KeyCode.H))
